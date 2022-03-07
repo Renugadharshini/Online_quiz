@@ -1,32 +1,34 @@
 package org.stu.jdbcApp;
 
 public class Student {
-	private int id;
-	private String name,email,password;
-	public int getId() {
-		return id;
+	private int sid;
+	private String sname,semail,spassword;
+	public int getSid() {
+		return sid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setSid(int sid) {
+		this.sid = sid;
 	}
-	public String getName() {
-		return name;
+	public String getSname() {
+		return sname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
-	public String getEmail() {
-		return email;
+	public String getSemail() {
+		return semail;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setSemail(String semail) {
+		this.semail = semail;
 	}
-	public String getPassword() {
-		return password;
+	public String getSpassword() {
+		return spassword;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setSpassword(String spassword) {
+		this.spassword = spassword;
 	}
+	
+	
 	
 	
 
