@@ -79,7 +79,7 @@ public class Studentcrud {
 		
 		try {
 			Connection con=getConnect();
-			PreparedStatement pst=con.prepareStatement("insert into student(sname,semail,spassword) values(?,?,?)");
+			PreparedStatement pst=con.prepareStatement("insert into studt(sname,semail,spassword) values(?,?,?)");
 			pst.setString(1,st.getSname());
 			pst.setString(2,st.getSemail());
 			pst.setString(3,st.getSpassword());
@@ -99,7 +99,7 @@ public class Studentcrud {
 	{
 		try {
 			Connection con=getConnect();
-			PreparedStatement pst=con.prepareStatement("select * from student");
+			PreparedStatement pst=con.prepareStatement("select * from studt");
 			ResultSet rs=pst.executeQuery();
 			
 			while(rs.next())
@@ -135,12 +135,12 @@ public class Studentcrud {
 		try {
 			
 			Connection con=getConnect();
-			String str="update student set sname=?,semail=?,spassword=? where sid=?";
+			String str="update studt set sname=?,semail=?,spassword=? where sid=?";
 			PreparedStatement pst=con.prepareStatement(str);
 			
 			pst.setString(1, st.getSname());
 			pst.setString(2, st.getSemail());
-			pst.setString(3, st.getpassword());
+			pst.setString(3, st.getSpassword());
 			pst.setInt(4, st.getSid());
 			
 			int x=pst.executeUpdate();
@@ -169,7 +169,7 @@ public class Studentcrud {
 			st.setSid(sid);
 			Connection con=getConnect();
 			
-			PreparedStatement pst=con.prepareStatement("delete from student where sid=?");
+			PreparedStatement pst=con.prepareStatement("delete from studt where sid=?");
 			
 			pst.setInt(1, st.getSid());
 			int x=pst.executeUpdate();
