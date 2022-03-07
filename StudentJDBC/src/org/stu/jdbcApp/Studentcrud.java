@@ -55,7 +55,7 @@ public class Studentcrud {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			//Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Driver class loaded and registered");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cruds?characterEncoding=latin1","root","tiger");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/onlinequiz?characterEncoding=latin1","root","tiger");
 			System.out.println("Connection Established Between java applicatiion and database server");
 			return con;
 		}
@@ -70,19 +70,19 @@ public class Studentcrud {
 		Student st=new Student();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the details");
-		String name=sc.next();
-		st.setName(name);
-		String email=sc.next();
-		st.setEmail(email);
-		String password=sc.next();
-		st.setPassword(password);
+		String sname=sc.next();
+		st.setSname(sname);
+		String semail=sc.next();
+		st.setSemail(semail);
+		String spassword=sc.next();
+		st.setSpassword(spassword);
 		
 		try {
 			Connection con=getConnect();
-			PreparedStatement pst=con.prepareStatement("insert into stud(name,email,password) values(?,?,?)");
-			pst.setString(1,st.getName());
-			pst.setString(2,st.getEmail());
-			pst.setString(3,st.getPassword());
+			PreparedStatement pst=con.prepareStatement("insert into student(sname,semail,spassword) values(?,?,?)");
+			pst.setString(1,st.getSname());
+			pst.setString(2,st.getSemail());
+			pst.setString(3,st.getSpassword());
 			int x=pst.executeUpdate();
 			pst.close();
 			con.close();
@@ -99,7 +99,7 @@ public class Studentcrud {
 	{
 		try {
 			Connection con=getConnect();
-			PreparedStatement pst=con.prepareStatement("select * from stud");
+			PreparedStatement pst=con.prepareStatement("select * from student");
 			ResultSet rs=pst.executeQuery();
 			
 			while(rs.next())
@@ -120,28 +120,28 @@ public class Studentcrud {
 		Student st=new Student();
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the id");
-		int id=sc.nextInt();
-		st.setId(id);
+		int sid=sc.nextInt();
+		st.setSid(sid);
 		System.out.println("Enter the name");
-		String name=sc.next();
-		st.setName(name);
+		String sname=sc.next();
+		st.setSname(sname);
 		System.out.println("Enter the email");
-		String email=sc.next();
-		st.setEmail(email);
+		String semail=sc.next();
+		st.setSemail(semail);
 		System.out.println("Enter the password");
-		String password=sc.next();
-		st.setPassword(password);
+		String spassword=sc.next();
+		st.setSpassword(spassword);
 		
 		try {
 			
 			Connection con=getConnect();
-			String str="update stud set name=?,email=?,password=? where id=?";
+			String str="update student set sname=?,semail=?,spassword=? where sid=?";
 			PreparedStatement pst=con.prepareStatement(str);
 			
-			pst.setString(1, st.getName());
-			pst.setString(2, st.getEmail());
-			pst.setString(3, st.getPassword());
-			pst.setInt(4, st.getId());
+			pst.setString(1, st.getSname());
+			pst.setString(2, st.getSemail());
+			pst.setString(3, st.getpassword());
+			pst.setInt(4, st.getSid());
 			
 			int x=pst.executeUpdate();
 			pst.close();
@@ -162,16 +162,16 @@ public class Studentcrud {
 	{
 		Scanner sc=new Scanner(System.in);
 		try {
-			int id;
+			int sid;
 			System.out.println("Enter the record number to delete");
-			id=sc.nextInt();
+			sid=sc.nextInt();
 			Student st=new Student();
-			st.setId(id);
+			st.setSid(sid);
 			Connection con=getConnect();
 			
-			PreparedStatement pst=con.prepareStatement("delete from stud where id=?");
+			PreparedStatement pst=con.prepareStatement("delete from student where sid=?");
 			
-			pst.setInt(1, st.getId());
+			pst.setInt(1, st.getSid());
 			int x=pst.executeUpdate();
 			pst.close();
 			con.close();
