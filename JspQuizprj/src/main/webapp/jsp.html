@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JSP APPLICATION</title>
+</head>
+<body>
+ <h1>JSP Quiz</h1><br>
+
+    Q 1 - Which of the following is not a implicit object?<br>
+
+    <input type="radio" name="question1">A - request<br>
+    <input type="radio" name="question1">B - response<br>
+    <input type="radio" name="question1" id="correct1">C - cookie<br>
+    <input type="radio" name="question1">D - session<br>
+
+Q 2 - Which of the following is a server side technology?<br>
+
+<input type="radio" name="question2"> A - html<br>
+
+<input type="radio" name="question2" id="correct2"> B - jsp<br>
+
+<input type="radio" name="question2"> C - javaScript<br>
+
+<input type="radio" name="question2"> D - css<br>
+
+Q 3 - Which of the following attributes are mandatory in <jsp:useBean /> tag?<br>
+
+<input type="radio" name="question3"> A - id, type<br>
+
+<input type="radio" name="question3" id="correct3"> B - id, class<br>
+
+<input type="radio" name="question3">C - type, class<br>
+
+<input type="radio" name="question3">D - type,property<br>
+
+Q 4 - Which of the following is true about language attribute?<br>
+
+<input type="radio" name="question4">A - The language attribute indicates the programming language used in scripting the servlet.<br>
+
+<input type="radio" name="question4">B - The language attribute indicates the programming language used in scripting the html page.<br>
+
+<input type="radio" name="question4" id="correct4">C - The language attribute indicates the programming language used in scripting the JSP page.<br>
+
+<input type="radio" name="question4">D - None of the above.<br>
+
+Q 5 - What is true about filters?<br>
+
+<input type="radio" name="question5">A - JSP Filters are used to intercept requests from a client before they access a resource at back end.<br>
+
+<input type="radio" name="question5">B - JSP Filters are used to manipulate responses from server before they are sent back to the client.<br>
+
+<input type="radio" name="question5" id="correct5">C - Both of the above.<br>
+
+<input type="radio" name="question5">D - None of the above.<br>
+
+Q 6 - Which of the following is true about import Attribute?<br>
+
+<input type="radio" name="question6">A - The import attribute serves the same function as, and behaves like, the Java import statement.<br>
+
+<input type="radio" name="question6">B - The value for the import option is the name of the package you want to import.<br>
+
+<input type="radio" name="question6" id="correct6">C - Both of the above.<br>
+
+<input type="radio" name="question6">D - None of the above.<br>
+
+Q 7 - What is the default value of isELIgnored attribute?<br>
+
+<input type="radio" name="question7" id="correct7">A - true<br>
+
+<input type="radio" name="question7">B - false<br>
+
+Q 8 - Which of the following is true about <jsp:setProperty> action?<br>
+
+    <input type="radio" name="question8">A - The setProperty action sets the properties of a Bean.<br>
+
+    <input type="radio" name="question8">B - The Bean must have been previously defined before using setProperty action.<br>
+
+    <input type="radio" name="question8" id="correct8">C - Both of the above.<br>
+
+    <input type="radio" name="question8">D - None of the above.<br>
+
+Q 9 - What is Localization?<br>
+
+<input type="radio" name="question9">A - Localization refers to creating local content on a website.<br>
+
+<input type="radio" name="question9">B - Localization refers to adding locale related information to a website.<br>
+
+<input type="radio" name="question9" id="correct9">C - Localization means adding resources to a web site to adapt it to a particular geographical or cultural region for example Hindi translation to a web site.<br>
+
+<input type="radio" name="question9">D - None of the above<br>
+
+Q 10 - Which of the following is true about <c:choose> tag?<br>
+
+    <input type="radio" name="question10">A - The <c:choose> works like a Java switch statement in that it lets you choose between a number of alternatives.<br>
+    <input type="radio" name="question10">B - The <c:choose> tag has <c:when> tags.<br>
+    <input type="radio" name="question10">C - The <c:choose> tag has <otherwise> as default clause.<br>
+    <input type="radio" name="question10" id="correct10">D - All of the above.<br>
+
+    <input type="submit" name="submit" value="submitQuiz" onclick="result()" ><br>
+
+    <script type="text/javascript">
+        function result(){
+           //body..
+           var score=0;
+           if(document.getElementById('correct2').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct2').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct3').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct4').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct5').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct6').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct7').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct8').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct9').checked)
+           {
+               score++;
+           }
+           if(document.getElementById('correct10').checked)
+           {
+               score++;
+           }
+           document.write("Your Score Is:"+score);
+    
+        }
+
+    </script>
+
+</body>
+</html>
