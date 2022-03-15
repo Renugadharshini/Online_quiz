@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+</head>
+<body>
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+             <div class="container">
+                 <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed"
+                             data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                               aria-controls="navbar">
+                               <span class="sr-only">navigation</span>
+                               <span class="icon-bar"></span>  <span class="icon-bar"></span>
+                               <span class="icon-bar"></span>
+                               </button>
+                 
+                 <a class="navbar-brand" href="#" th:href="@{/}">Registration and Login Quiz App</a>
+                 </div>
+             </div>
+        </nav>
+
+
+ <br>
+ <br>
+         <div class="container">
+            <div class="row">
+                 <div class="col-md-6 col-md-offset-3">
+                 
+                      <div th:if="${param.success}">
+                          <div class="alter alter-info"><h1>You are successfully registered!!!!</h1> </div>
+                    </div>
+                            
+                     <h1>Registration</h1>       
+                          
+                          
+       <form th:action="@{/registration}" method="post" th:object="${student}" >
+       
+             <div class="form-group">
+                 <label class="control-label" for="sname">
+                         Student Name
+                  </label>
+                  
+     <input id="sname" class="form-control" th:field="*{sname}" required autofocus="autofocus">
+               </div>  
+                  
+                 
+                 <div class="form-group">
+                 <label class="control-label" for="semail">
+                          Student Email
+                  </label>
+                  
+     <input id="semail" class="form-control" th:field="*{semail}" required autofocus="autofocus">
+               </div>  
+                 
+                 
+                 
+                 <div class="form-group">
+                 <label class="control-label" for="spassword">
+                         Student Password
+                  </label>
+                  
+     <input id="spassword" class="form-control"  type="password" th:field="*{spassword}" required autofocus="autofocus">
+               </div>  
+                 
+                
+                <div class="form-group">
+                   <button type="submit" class="btn btn-success">Register </button>
+                    <span>Already register? <a href="/" th:href="@{/login}">Login here</a></span>
+                 
+                 
+                 
+                 </div>
+ 
+       </form>
+ 
+                 </div>
+          
+          
+          </div>
+         </div>
+</body>
+</html>
